@@ -18,6 +18,111 @@
       </head>
 
       <body>
+        <section>
+          <div class="container">
+            <div class="row">
+              <div class="col-4">
+                <div class="d-flex flex-column">
+                  <input type="text" id="result" readonly />
+                  <table class="w-100">
+                    <tr class="justify-content-between d-flex w-100">
+                      <td>
+                        <input
+                          type="button"
+                          id=""
+                          onclick="takenum('1')"
+                          value="1"
+                        />
+                      </td>
+                      <td>
+                        <input type="button" onclick="takenum('2')" value="2" />
+                      </td>
+                      <td>
+                        <input type="button" onclick="takenum('3')" value="3" />
+                      </td>
+                      <td>
+                        <input
+                          type="button"
+                          onclick="clearResult('')"
+                          value="C"
+                        />
+                      </td>
+                    </tr>
+
+                    <tr
+                      class="justify-contant-center justify-content-between d-flex w-100"
+                    >
+                      <td>
+                        <input type="button" onclick="takenum('4')" value="4" />
+                      </td>
+                      <td>
+                        <input type="button" onclick="takenum('5')" value="5" />
+                      </td>
+                      <td>
+                        <input type="button" onclick="takenum('6')" value="6" />
+                      </td>
+                      <td>
+                        <input type="button" onclick="takenum('*')" value="*" />
+                      </td>
+                    </tr>
+
+                    <tr
+                      class="justify-contant-center justify-content-between d-flex w-100"
+                    >
+                      <td>
+                        <input type="button" onclick="takenum('7')" value="7" />
+                      </td>
+                      <td>
+                        <input type="button" onclick="takenum('8')" value="8" />
+                      </td>
+                      <td>
+                        <input type="button" onclick="takenum('9')" value="9" />
+                      </td>
+                      <td>
+                        <input type="button" onclick="takenum('-')" value="-" />
+                      </td>
+                    </tr>
+
+                    <tr
+                      class="justify-contant-center justify-content-between d-flex w-100"
+                    >
+                      <td>
+                        <input type="button" onclick="takenum('0')" value="0" />
+                      </td>
+                      <td>
+                        <input
+                          type="button"
+                          onclick="printOutput('')"
+                          value="="
+                        />
+                      </td>
+                      <td>
+                        <input type="button" onclick="takenum('/')" value="/" />
+                      </td>
+                      <td>
+                        <input type="button" onclick="takenum('+')" value="+" />
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <script>
+          function takenum(value) {
+            document.getElementById("result").value += value;
+          }
+          function printOutput() {
+            var p = document.getElementById("result").value;
+            var q = eval(p);
+            document.getElementById("result").value = q;
+          }
+          function clearResult() {
+            document.getElementById("result").value = "";
+          }
+        </script>
         <script src="./main.js"></script>
       </body>
     </html>
