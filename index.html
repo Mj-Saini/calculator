@@ -13,112 +13,211 @@
     <html lang="en" dir="ltr">
       <head>
         <meta charset="utf-8" />
-        <title>Simple Calculator using HTML, CSS and JavaScript</title>
+        <title>calculator</title>
         <link rel="stylesheet" href="./calcu lator.html" />
       </head>
+      <style>
+        input {
+          padding: 10px 0;
+        }
+      </style>
 
       <body>
         <section>
           <div class="container">
-            <div class="row">
-              <div class="col-4">
-                <div class="d-flex flex-column">
-                  <input type="text" id="result" readonly />
-                  <table class="w-100">
-                    <tr class="justify-content-between d-flex w-100">
-                      <td>
-                        <input
-                          type="button"
-                          id=""
-                          onclick="takenum('1')"
-                          value="1"
-                        />
-                      </td>
-                      <td>
-                        <input type="button" onclick="takenum('2')" value="2" />
-                      </td>
-                      <td>
-                        <input type="button" onclick="takenum('3')" value="3" />
-                      </td>
-                      <td>
-                        <input
-                          type="button"
-                          onclick="clearResult('')"
-                          value="C"
-                        />
-                      </td>
-                    </tr>
+            <div style="max-width: 400px" class="mx-auto">
+              <div class="d-flex flex-column">
+                <input
+                  style="width: 94%; padding: 10px"
+                  type="text"
+                  id="result"
+                  placeholder="0"
+                  readonly
+                />
+                <table style="width: 100%; margin: 20px 0 0 0">
+                  <tr class="justify-content-between d-flex w-100">
+                    <td>
+                      <input
+                        style="width: 100%"
+                        type="button"
+                        id=""
+                        onclick="calculate('1')"
+                        value="1"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        style="width: 100%"
+                        type="button"
+                        onclick="calculate('2')"
+                        value="2"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        style="width: 100%"
+                        type="button"
+                        onclick="calculate('3')"
+                        value="3"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        style="width: 100%"
+                        type="button"
+                        onclick="clearResult('')"
+                        value="C"
+                      />
+                    </td>
+                  </tr>
 
-                    <tr
-                      class="justify-contant-center justify-content-between d-flex w-100"
-                    >
-                      <td>
-                        <input type="button" onclick="takenum('4')" value="4" />
-                      </td>
-                      <td>
-                        <input type="button" onclick="takenum('5')" value="5" />
-                      </td>
-                      <td>
-                        <input type="button" onclick="takenum('6')" value="6" />
-                      </td>
-                      <td>
-                        <input type="button" onclick="takenum('*')" value="*" />
-                      </td>
-                    </tr>
+                  <tr
+                    class="justify-contant-center justify-content-between d-flex w-100"
+                  >
+                    <td>
+                      <input
+                        style="width: 100%"
+                        type="button"
+                        onclick="calculate('4')"
+                        value="4"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        style="width: 100%"
+                        type="button"
+                        onclick="calculate('5')"
+                        value="5"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        style="width: 100%"
+                        type="button"
+                        onclick="calculate('6')"
+                        value="6"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        style="width: 100%"
+                        type="button"
+                        onclick="calculate('*')"
+                        value="*"
+                      />
+                    </td>
+                  </tr>
 
-                    <tr
-                      class="justify-contant-center justify-content-between d-flex w-100"
-                    >
-                      <td>
-                        <input type="button" onclick="takenum('7')" value="7" />
-                      </td>
-                      <td>
-                        <input type="button" onclick="takenum('8')" value="8" />
-                      </td>
-                      <td>
-                        <input type="button" onclick="takenum('9')" value="9" />
-                      </td>
-                      <td>
-                        <input type="button" onclick="takenum('-')" value="-" />
-                      </td>
-                    </tr>
+                  <tr
+                    class="justify-contant-center justify-content-between d-flex w-100"
+                  >
+                    <td>
+                      <input
+                        style="width: 100%"
+                        type="button"
+                        onclick="calculate('7')"
+                        value="7"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        style="width: 100%"
+                        type="button"
+                        onclick="calculate('8')"
+                        value="8"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        style="width: 100%"
+                        type="button"
+                        onclick="calculate('9')"
+                        value="9"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        style="width: 100%"
+                        type="button"
+                        onclick="calculate('-')"
+                        value="-"
+                      />
+                    </td>
+                  </tr>
 
-                    <tr
-                      class="justify-contant-center justify-content-between d-flex w-100"
-                    >
-                      <td>
-                        <input type="button" onclick="takenum('0')" value="0" />
-                      </td>
-                      <td>
-                        <input
-                          type="button"
-                          onclick="printOutput('')"
-                          value="="
-                        />
-                      </td>
-                      <td>
-                        <input type="button" onclick="takenum('/')" value="/" />
-                      </td>
-                      <td>
-                        <input type="button" onclick="takenum('+')" value="+" />
-                      </td>
-                    </tr>
-                  </table>
-                </div>
+                  <tr
+                    class="justify-contant-center justify-content-between d-flex w-100"
+                  >
+                    <td>
+                      <input
+                        style="width: 100%"
+                        type="button"
+                        onclick="calculate('0')"
+                        value="0"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        style="width: 100%"
+                        type="button"
+                        onclick="printOutput('')"
+                        value="="
+                      />
+                    </td>
+                    <td>
+                      <input
+                        style="width: 100%"
+                        type="button"
+                        onclick="calculate('/')"
+                        value="/"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        style="width: 100%"
+                        type="button"
+                        onclick="calculate('+')"
+                        value="+"
+                      />
+                    </td>
+                  </tr>
+                </table>
               </div>
             </div>
           </div>
         </section>
 
         <script>
-          function takenum(value) {
+          function calculate(value) {
             document.getElementById("result").value += value;
           }
           function printOutput() {
-            var p = document.getElementById("result").value;
-            var q = eval(p);
-            document.getElementById("result").value = q;
+            if (result.value === "") {
+              result.value = "";
+            } else {
+              var p = document.getElementById("result").value;
+              var q = eval(p);
+              document.getElementById("result").value = q;
+            }
           }
+          function reminder() {
+            if (result.value === "") {
+              result.value = "";
+            } else {
+              var p = document.getElementById("result").value;
+              var q = eval(p);
+              document.getElementById("result").value = q;
+            }
+          }
+
+          // function printOutput() {
+          //   if (result.value === "") {
+          //     result.value = "";
+          //   } else {
+          //     let answer = eval(result.value);
+          //     result.value = answer;
+          //   }
+          // }
           function clearResult() {
             document.getElementById("result").value = "";
           }
